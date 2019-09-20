@@ -55,7 +55,11 @@ module.exports = ctx => ({
     lastUpdated: "上次更新",
     nav: require("./nav"),
     sidebar: {
-      "/guide/": getGuideSidebar("指南", "深入"),
+      "/dids/": getGuideSidebar("指南", "深入"),
+      "/w3c/": getW3cSidebar(),
+      "/didserver/": getDIDServiceSidebar(),
+      "/idg/": getIdgSidebar(),
+      "/protocol/":getProtocolBar()
     }
   },
   plugins: [
@@ -95,7 +99,7 @@ module.exports = ctx => ({
   extraWatchFiles: [".vuepress/nav/index.js"]
 });
 
-function getGuideSidebar() {
+function getW3cSidebar() {
   return [
     {
       title: "指南",
@@ -110,8 +114,86 @@ function getGuideSidebar() {
       collapsable: false,
       sidebarDepth: 2,
       children: [
-        'MORE',
+        'abnf',
+        'ld-cryptosuite-registry'
       ]
     }
+  ];
+}
+
+function getDIDServiceSidebar (){
+  return [
+    {
+      // title: "指南",
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        "",
+        'DIDSystem',
+        'DIDDesign'
+      ]
+    }
+    
+  ];
+}
+
+function getGuideSidebar(groupA, groupB) {
+  return [
+    {
+      title: groupA,
+      collapsable: false,
+      sidebarDepth: 2,
+      children: ["Guide"]
+    },
+    {
+      title: groupB,
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        "",
+        "Terminology",
+        "DataModel",
+        "DecentralizedIdentifiers",
+        "DIDDocuments",
+        "DIDDocumentSyntax",
+        "DIDMethods",
+        "Resolvers",
+        "SecurityConsiderations",
+        "PrivacyConsiderations",
+        "FutureWork",
+        "Registries",
+        "RealWorldExample",
+        "References"
+      ]
+    }
+  ];
+}
+
+function getIdgSidebar (){
+  return [
+    {
+      // title: "指南",
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        "",
+        "Service"
+      ]
+    }
+    
+  ];
+}
+
+function getProtocolBar (){
+  return [
+    {
+      // title: "指南",
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        ""
+      ]
+    }
+    
   ];
 }
