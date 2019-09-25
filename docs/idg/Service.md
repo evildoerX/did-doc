@@ -58,3 +58,100 @@ sequenceDiagram
 
 
 #### 类图
+
+
+## 信用卡
+::: tip
+ 1. 机构A和机构B达成协议，机构A的会员到机构B消费都会有8折优惠
+
+1. 机构B将机构A的CA，CA_A添加到自己的信任列表中，并设置有效期限为活动期
+
+2. 信任列表可以创建group
+
+3. 机构B具体的业务层针对某个CA或者某个group设置业务逻辑，即持有CA_A颁发的证书的人会有8折优惠（或者权益内容写在证书中）
+
+4. 活动结束后，信任列表中的CA_A自动过期
+
+5. 机构A用自己的CA_A给某个用户颁发了证书CA_A_User1
+
+6. 用户拿着这张证书CA_A_User1给到机构B
+
+7. 机构B拿着这张证书去MSP服务下验证，发现这张证书的确是CA_A颁发的。且CA_A在自己的业务信任表中
+
+   a ) 如果权益记录在业务内，那么机构B会发现CA_A的证书有八折优惠，进行核销（调用MSP服务的证书核销接口。核销条件 业务层自己记录，例如这张证书可以优惠多次等等）
+
+   b ) 或者从证书内读取到达成的协议内容，解析后，核销这张证书（调用MSP服务的证书核销接口）
+:::
+### 签署会员协议
+@startuml
+actor 用户A
+participant 机构A
+participant "DID Resolver"
+participant BlockChain
+
+用户A -> 机构A: 签订会员权益协议（提供用户a的did给到机构A）
+机构A -> 机构A: 选择需要签署的协议
+机构A -> "DID Resolver": 签署协议
+"DID Resolver" -> BlockChain: 更新机构A的did文档
+"DID Resolver" --> 机构A: 签订成功
+机构A --> 用户A: 签订成功 等待用户签署(提供机构的DID，publickey，以及其他se信息)
+用户A -> "DID Resolver": 签署成功
+"DID Resolver" -> BlockChain: 更新用户A的did文档
+@enduml
+
+``` json
+ "service": [{
+    "id": "did:example:123456789abcdefghi#VipCard",
+    "type": "xxxshop.VipCard",
+    "@context": {
+      "@id":"机构A的did url",
+      "publickKey":"机构A的公钥"
+    },
+    "serviceEndpoint": "https://openid.example.com/did&vip=1",
+    "description":"xxxshop 的 VIP 1",
+    "开始时间":"xx",
+    "结束时间":"xx",
+    "会员等级":"1",
+    "会员折扣":"0.8"
+  }
+ ]
+```
+
+### 机构A和机构B签署合作协议
+@startuml
+participant 机构A
+participant 机构B
+participant "DID Resolver"
+participant BlockChain
+
+机构A -> 机构B: 签订会员合作权益协议（提供机构A的did给到机构B）
+机构A -> 机构A: 选择需要签署的协议
+机构A -> "DID Resolver": 签署协议
+"DID Resolver" -> BlockChain: 更新机构A的did文档
+"DID Resolver" --> 机构A: 签订成功
+机构A --> 机构B: 签订成功 等待机构B签署(提供机构的DID，publickey，以及其他se信息)
+机构B -> "DID Resolver": 签署成功
+"DID Resolver" -> BlockChain: 更新机构B的did文档
+@enduml
+
+### 跨机构共享权益
+@startuml
+actor 用户A
+participant 机构A
+participant 机构B
+participant "DID Resolver"
+participant BlockChain
+
+用户A -> 机构B: 出示与机构A签署的协议
+机构B -> "DID Resolver": 获取用户A与机构A签署的协议
+"DID Resolver" -> 机构B: 返回用户A与机构B签署的具体信息(SE信息)
+机构B
+机构A -> 机构B: 签订会员合作权益协议（提供机构A的did给到机构B）
+机构A -> 机构A: 选择需要签署的协议
+机构A -> "DID Resolver": 签署协议
+"DID Resolver" -> BlockChain: 更新机构A的did文档
+"DID Resolver" --> 机构A: 签订成功
+机构A --> 机构B: 签订成功 等待机构B签署(提供机构的DID，publickey，以及其他se信息)
+机构B -> "DID Resolver": 签署成功
+"DID Resolver" -> BlockChain: 更新机构B的did文档
+@enduml
