@@ -60,28 +60,10 @@ sequenceDiagram
 #### 类图
 
 
-## 信用卡
-::: tip
- 1. 机构A和机构B达成协议，机构A的会员到机构B消费都会有8折优惠
+## 会员信用卡
+1. did对于会员系统是会员权益的获取手续和对权益的凭证。如果用中台的方式实现的话双方的意愿直接落数据库字段，再产生争议的情况下很难进行仲裁。如果用DID确认数据生成。包含DID本身记录的地方和签署过程，某种意义上是可以进行后续仲裁的。
+2. 对于会员来说，它可以根据对应的线上系统的自身权限控制特性以一个DID去作为访问的身份，同时对方系统也认可这个DID身份；这个DID可以记录在数据库里，也可以记录在自己自用的非公开(加密存储在链上或者就存在应用数据里，以DID Doc的形式)的did文档里；将来中台都提供这种endpoint，所有用户都会有did格式的操作面板，；相当于数据库的权限可以对外展示成操作按钮
 
-1. 机构B将机构A的CA，CA_A添加到自己的信任列表中，并设置有效期限为活动期
-
-2. 信任列表可以创建group
-
-3. 机构B具体的业务层针对某个CA或者某个group设置业务逻辑，即持有CA_A颁发的证书的人会有8折优惠（或者权益内容写在证书中）
-
-4. 活动结束后，信任列表中的CA_A自动过期
-
-5. 机构A用自己的CA_A给某个用户颁发了证书CA_A_User1
-
-6. 用户拿着这张证书CA_A_User1给到机构B
-
-7. 机构B拿着这张证书去MSP服务下验证，发现这张证书的确是CA_A颁发的。且CA_A在自己的业务信任表中
-
-   a ) 如果权益记录在业务内，那么机构B会发现CA_A的证书有八折优惠，进行核销（调用MSP服务的证书核销接口。核销条件 业务层自己记录，例如这张证书可以优惠多次等等）
-
-   b ) 或者从证书内读取到达成的协议内容，解析后，核销这张证书（调用MSP服务的证书核销接口）
-:::
 ### 签署会员协议
 @startuml
 actor 用户A
@@ -116,6 +98,24 @@ participant BlockChain
   }
  ]
 ```
+
+### 用户A享受机构A的会员服务
+
+@startuml
+actor 用户A
+participant 机构A
+participant "DID Resolver"
+participant BlockChain
+
+用户A -> 机构A: 出示与机构A签署协议的凭证
+机构A -> "DID Resolver": 获取凭证中的didurl发送给，DID Resolver
+"DID Resolver" -> BlockChain: DID Resolver 解析did url ，从链上解析对应的did doc，
+BlockChain --> "DID Resolver": 返回did doc
+"DID Resolver" -> "DID Resolver": 解析didurl 对应的service end point
+"DID Resolver" --> 机构A: 使用当前service end point的publickey 加密数据 并返回
+机构A --> 机构A: 使用自己的私钥解密数据，成功说明是真实签约。同时解析service end point内的业务数据
+机构A -> 用户A: 用户权益解析成功
+@enduml
 
 ### 机构A和机构B签署合作协议
 @startuml
