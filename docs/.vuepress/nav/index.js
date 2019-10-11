@@ -1,7 +1,24 @@
 module.exports = [
   {
-    text: 'Decentralized Identifiers (DIDs) 0.13',
-    link: '/dids/',
+    text: 'DID概念',
+    items: [
+      {
+        text: 'Decentralized Identifiers (DIDs) 0.13',
+        link: '/dids/'
+      },
+      {
+        text: 'W3C其他资料',
+        link: '/w3c/'
+      },
+      {
+        text: 'DID Resolution',
+        link: '/did-resolution/'
+      },
+    ]
+  },
+  {
+    text: 'DID服务',
+    link: '/didService/'
   },
   {
     text: 'W3C其他资料',

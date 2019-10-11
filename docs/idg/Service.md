@@ -100,6 +100,8 @@ participant BlockChain
 ```
 
 ### 用户A享受机构A的会员服务
+1. 验证身份
+2. 解析会员权益
 
 @startuml
 actor 用户A
@@ -145,7 +147,6 @@ participant BlockChain
 用户A -> 机构B: 出示与机构A签署的协议
 机构B -> "DID Resolver": 获取用户A与机构A签署的协议
 "DID Resolver" -> 机构B: 返回用户A与机构B签署的具体信息(SE信息)
-机构B
 机构A -> 机构B: 签订会员合作权益协议（提供机构A的did给到机构B）
 机构A -> 机构A: 选择需要签署的协议
 机构A -> "DID Resolver": 签署协议
@@ -155,3 +156,49 @@ participant BlockChain
 机构B -> "DID Resolver": 签署成功
 "DID Resolver" -> BlockChain: 更新机构B的did文档
 @enduml
+
+
+{
+  {
+    "id": "did:example:123456789abcdefghi#shopB",
+    "type": "business.shopB",
+    "@context": {
+      "@id":"shopB didurl",
+      "publickKey":"shopB 公钥"
+    },
+    "serviceEndpoint": "https://openid.example.com/"
+  	"data":{
+  		"vip_level:":[
+  			{
+  				shopA:1,
+          shopB:1,
+          rebate:"0.8"
+				},
+        {
+  				shopA:2,
+          shopB:2,
+          rebate:"0.7"
+				},
+        {
+  				shopA:3,
+          shopB:3,
+          rebate:"0.6"
+				}
+  		],
+      start_time:"2019-09-10",
+      end_time:"2025-09-10"
+		}
+  }
+}
+
+{
+  {
+    "id": "did:example:123456789abcdefghi#shopB;service="vipCard"?did=""",
+    "type": "shopB.vipCard",
+    "@context": {
+      "@id":"shopB didurl",
+      "publickKey":"shopB 公钥"
+    },
+    "serviceEndpoint": "https://openid.example.com/acton=xiaoka?did="""
+  }
+}

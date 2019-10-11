@@ -59,7 +59,8 @@ module.exports = ctx => ({
       "/w3c/": getW3cSidebar(),
       "/didserver/": getDIDServiceSidebar(),
       "/idg/": getIdgSidebar(),
-      "/protocol/":getProtocolBar()
+      "/protocol/":getProtocolBar(),
+      "/didService/":getDIDServiceBar()
     }
   },
   plugins: [
@@ -185,6 +186,20 @@ function getIdgSidebar (){
 }
 
 function getProtocolBar (){
+  return [
+    {
+      // title: "指南",
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        ""
+      ]
+    }
+    
+  ];
+}
+
+function getDIDServiceBar (){
   return [
     {
       // title: "指南",
