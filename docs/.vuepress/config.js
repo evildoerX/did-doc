@@ -60,7 +60,8 @@ module.exports = ctx => ({
       "/didserver/": getDIDServiceSidebar(),
       "/idg/": getIdgSidebar(),
       "/protocol/":getProtocolBar(),
-      "/didService/":getDIDServiceBar()
+      "/didService/":getDIDServiceBar(),
+      "/did-resolution/":getDIDServiceBar()
     }
   },
   plugins: [
