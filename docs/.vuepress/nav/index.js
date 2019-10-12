@@ -14,6 +14,10 @@ module.exports = [
         text: 'DID Resolution',
         link: '/did-resolution/'
       },
+      {
+        text: 'vc-data-model',
+        link: '/vc-data-model/'
+      },
     ]
   },
   {

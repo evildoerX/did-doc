@@ -61,7 +61,8 @@ module.exports = ctx => ({
       "/idg/": getIdgSidebar(),
       "/protocol/":getProtocolBar(),
       "/didService/":getDIDServiceBar(),
-      "/did-resolution/":getDIDServiceBar()
+      "/did-resolution/":getDIDServiceBar(),
+      "/vc-data-model/":getDIDServiceBar()
     }
   },
   plugins: [

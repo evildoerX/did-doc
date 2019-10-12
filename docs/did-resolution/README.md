@@ -1,4 +1,4 @@
-# DID-Resolution
+# [DID-Resolution](https://w3c-ccg.github.io/did-resolution/)
 ## Abstract
 分散标识符（DID）是用于可验证的“自我主权”数字身份的新型标识符。 DID完全受DID主题的控制，独立于任何集中式注册表，身份提供者或证书颁发机构。 DID解析为DID文档—描述如何使用特定DID的简单文档。
 
