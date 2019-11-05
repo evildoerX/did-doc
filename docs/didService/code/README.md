@@ -1,7 +1,8 @@
 # 程序设计
 
 ## 接口设计
-### 1. 根据模板获取简单JSon
+
+### 1. 根据模板获取简单 JSon
 
 ### 2. 实例化协议
 
@@ -13,17 +14,19 @@
 
 ### 协议模板表
 
-| 字段名称  | 字段说明                       |
-| --------- | ------------------------------ |
-| id        |                                |
-| appkey    |                                |
-| channel   |                                |
-| accountId |                                |
-| state     | 0 未审核， 1 已审核， 2 未通过 |
-| name      | 协议名称                       |
-| type      | 类型：1：协议，2：Credential   |
-| content   | 主体模板                       |
-| version   |                                |
+| 字段名称     | 字段说明                       |
+| ------------ | ------------------------------ |
+| id           |                                |
+| appkey       |                                |
+| channel      |                                |
+| accountId    |                                |
+| pid          | 协议 id                        |
+| state        | 0 未审核， 1 已审核， 2 未通过 |
+| name         | 协议名称                       |
+| type         | 类型：Service, proof  |
+| protocolType | 类型：1：协议，2：Credential   |
+| content      | 主体模板                       |
+| version      |                                |
 
 ### 协议模板解析表
 
