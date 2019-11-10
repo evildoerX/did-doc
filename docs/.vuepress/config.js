@@ -59,7 +59,8 @@ module.exports = ctx => ({
       "/w3c/": getW3cSidebar(),
       "/didserver/": getDIDServiceSidebar(),
       "/idg/": getIdgSidebar(),
-      "/protocol/":getProtocolBar(),
+      "/protocol/code/":getProtocolBar(),
+      "/protocol/design/":getProtocolBar(),
       "/didService/":getDIDServiceBar(),
       "/did-resolution/":getDIDServiceBar(),
       "/vc-data-model/":getDIDServiceBar()

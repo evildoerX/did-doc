@@ -38,6 +38,15 @@ module.exports = [
   },
   {
     text: '中台协议服务',
-    link: '/protocol/',
+    items: [
+      {
+        text: '产品定义',
+        link: '/protocol/design/'
+      },
+      {
+        text: '技术定义',
+        link: '/protocol/code/'
+      },
+    ]
   },
 ]
