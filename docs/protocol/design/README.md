@@ -121,6 +121,26 @@ Title "协议 - 合约 - DID"
 ## 时序图
 
 
+## 泳道图
+### 生成公私钥对
+@startuml
+|生成公私钥|
+start
+:申请公私钥;
+:验证参数合法性（appkey，channel，roleType, subjectId）;
+|#AntiqueWhite|CA|
+:调用创建公私钥方法;
+:存储公私钥对;
+|生成公私钥|
+:返回生成的公私钥信息;
+stop
+@enduml
 
 ### 生成DID
 ![生成DID生成过程](/didserver/DIDDesign.html#_5-1-create-did)
+@startuml
+|生成DID|
+start
+:验证参数合法性;
+:根据生成DID生成过程生成DID 和 标准的DID Document;
+@enduml

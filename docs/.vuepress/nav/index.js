@@ -18,23 +18,24 @@ module.exports = [
         text: 'vc-data-model',
         link: '/vc-data-model/'
       },
+      {
+        text: 'W3C其他资料',
+        link: '/w3c/',
+      },
+      {
+        text: 'DID与中台其他服务对接',
+        link: '/idg/',
+      },
     ]
   },
-  {
-    text: 'DID服务',
-    link: '/didService/'
-  },
-  {
-    text: 'W3C其他资料',
-    link: '/w3c/',
-  },
+  // {
+  //   text: 'DID服务',
+  //   link: '/didService/'
+  // },
+  
   {
     text: '中台DID服务',
     link: '/didserver/',
-  },
-  {
-    text: 'DID与中台其他服务对接',
-    link: '/idg/',
   },
   {
     text: '中台协议服务',
