@@ -63,16 +63,12 @@
 
 > 后期按需扩展
 
-- account = 0
-- node = 1
-- device = 2
-- application = 3
-- smart_contract = 4
-- bot = 5
-- asset = 6
-- stake = 7
-- validator = 8
-- group = 9
+- accountId = 0
+- subOrgKey = 1
+- appid = 2
+- appkey = 3
+- apppkey_version = 4
+...
 - any = 63
 
 2. KeyType：中间5位bits
@@ -81,6 +77,7 @@
 
 - ED25519 = 0
 - SECP256K1 = 1
+- EcdsaP256 = 2
 
 3. Hash：最5位bits
 
