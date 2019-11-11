@@ -105,8 +105,17 @@
 | id         | int(10)     |                 | UNSIGNED | 否   | 无   |      | AUTO_INCREMENT |
 | appkey     | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
 | channel    | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
-| save_type  | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
+| save_type  | varchar(50) | utf8_general_ci |          | 是   | NULL |  0/1/2/3    |
 | chain_data | json        | utf8_general_ci |          | 是   | NULL |      |
+
+::: tip
+save_type 存储级别：
+0：mysql
+1：mysql+hyperledger公证机构链
+2：mysql+ 加盟hyperledger公证链（成员）
+3：mysql+ 加盟hyperledger公证链（节点）
+4：mysql+ 私有hyperledger公证链（网络）
+:::
 
 ## 接口定义
 

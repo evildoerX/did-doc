@@ -286,3 +286,10 @@ start
 :返回对应的数据;
 stop
 @enduml
+
+
+## 其他要求
+### 1. did url解析
+1. 根据[did设计规范](/didserver/#did-string-format) 解析每个标识符
+### 2. did document解析
+2. 根据[标准的did document](/didserver/#did-document) 解析did document
