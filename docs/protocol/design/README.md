@@ -122,3 +122,5 @@ Title "协议 - 合约 - DID"
 
 
 
+### 生成DID
+![生成DID生成过程](/didserver/DIDDesign.html#_5-1-create-did)
