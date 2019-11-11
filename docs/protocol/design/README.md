@@ -126,7 +126,22 @@ Title "协议 - 合约 - DID"
 @startuml
 |生成公私钥|
 start
-:foo1;
+:申请公私钥;
+:验证参数合法性（appkey，channel，roleType, subjectId）;
+|#AntiqueWhite|CA|
+:调用创建公私钥方法;
+:存储公私钥对;
+|生成公私钥|
+:返回生成的公私钥信息;
+stop
+@enduml
+
+### 生成DID
+@startuml
+|生成DID|
+start
+:生成DID;
+:验证参数合法性;
 |#AntiqueWhite|Swimlane2|
 :foo2;
 :foo3;
