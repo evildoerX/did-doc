@@ -119,3 +119,17 @@ Title "协议 - 合约 - DID"
 
 
 ## 泳道图
+### 生成公私钥对
+@startuml
+|生成公私钥|
+start
+:foo1;
+|#AntiqueWhite|Swimlane2|
+:foo2;
+:foo3;
+|Swimlane1|
+:foo4;
+|Swimlane2|
+:foo5;
+stop
+@enduml
