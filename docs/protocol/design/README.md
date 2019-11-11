@@ -128,7 +128,7 @@ Title "协议 - 合约 - DID"
 start
 :申请公私钥;
 :验证参数合法性（appkey，channel，roleType, subjectId）;
-|#AntiqueWhite|CA|
+|#AntiqueWhite|CA函数库|
 :调用创建公私钥方法;
 :存储公私钥对;
 |生成公私钥|
@@ -137,10 +137,152 @@ stop
 @enduml
 
 ### 生成DID
-![生成DID生成过程](/didserver/DIDDesign.html#_5-1-create-did)
+[生成DID生成过程](/didserver/DIDDesign.html#_5-1-create-did)
 @startuml
 |生成DID|
 start
 :验证参数合法性;
 :根据生成DID生成过程生成DID 和 标准的DID Document;
+@enduml
+
+### 添加协议模板
+@startuml
+|协议模板|
+start
+:验证参数合法性;
+:添加协议;
+stop
+@enduml
+
+### 添加协议模板属性
+@startuml
+|协议模板|
+start
+:验证参数合法性;
+:验证协议模板id是否合法;
+:判断属性是否合法;
+:添加属性;
+:返回添加结果;
+stop
+@enduml
+
+### 获取协议模板属性列表
+@startuml
+|协议模板|
+start
+:验证参数合法性;
+:验证协议模板id是否合法;
+:获取协议模板对应的属性列表;
+:返回结果;
+stop
+@enduml
+
+### 更新协议模板
+@startuml
+|协议模板|
+start
+:验证参数合法性;
+:更新协议内容;
+:更新协议版本;
+stop
+@enduml
+
+
+### 获取协议模板详情
+@startuml
+|协议模板|
+start
+:验证参数合法性;
+:获取协议详情;
+:返回协议数据;
+stop
+@enduml
+
+### 获取协议模板列表
+@startuml
+|协议模板|
+start
+:验证参数合法性;
+:根据筛选条件获取协议模板列表;
+:返回协议列表数据;
+stop
+@enduml
+
+### 发布协议模板
+@startuml
+|协议模板|
+start
+:验证参数合法性;
+|#AntiqueWhite|市场接口|
+:发布到市场;
+:获取市场返回结果;
+|协议模板|
+:更新发布结果;
+stop
+@enduml
+
+### 获取协议属性
+@startuml
+|协议属性|
+start
+:验证参数合法性;
+:获取协议属性;
+:返回协议属性数据;
+stop
+@enduml
+
+
+### 实例化协议
+
+@startuml
+|协议属性|
+start
+:验证参数合法性;
+if (判断属性是否被实例化) then (yes)
+  :实例化当前属性对应的内容;
+else (nothing)
+  :返回 error;
+stop
+@enduml
+
+### jws签名
+@startuml
+|协议属性|
+start
+:验证参数合法性;
+:生成签名;
+stop
+@enduml
+
+### jws验证签名
+@startuml
+|协议属性|
+start
+:验证参数合法性;
+:验证签名;
+stop
+@enduml
+
+
+### 签署协议
+@startuml
+|协议属性|
+start
+:验证参数合法性;
+:验证签署主体信息是否正确;
+:验证协议实例化是否正确;
+:验证签名信息是否正确;
+:签署协议，返回didurl;
+stop
+@enduml
+
+### 根据DIDURL解析签署协议
+@startuml
+|协议属性|
+start
+:验证参数合法性;
+:解析DIDURL;
+:根据DIDurl的fragment，根据内容，query来查询具体的数据;
+:返回对应的数据;
+stop
 @enduml
