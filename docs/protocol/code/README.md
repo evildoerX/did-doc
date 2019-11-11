@@ -1,7 +1,9 @@
 # 中台协议
 
 ## E-R 图定义
+
 ![](./e-r.png)
+
 ## 数据表
 
 ### 公私钥
@@ -57,7 +59,6 @@
 | updated_at           | timestamp    |                 |      | 是  | NULL |      |
 | deleted_at           | timestamp    |                 |      | 是  | NULL |      |
 
-
 ### 协议 JSON 字段对应关系表
 
 | 名字                 | 类型         | 排序规则        | 属性 | 空  | 默认 | 注释 | 额外           |
@@ -96,6 +97,16 @@
 | created_at           | timestamp    |                 |          | 是   | NULL |      |
 | updated_at           | timestamp    |                 |          | 是   | NULL |      |
 | deleted_at           | timestamp    |                 |          | 是   | NULL |      |
+
+### 协议实例化数据存储表
+
+| 类型       | 排序规则    | 属性            | 空       | 默认 | 注释 | 额外 | 操作           |
+| ---------- | ----------- | --------------- | -------- | ---- | ---- | ---- | -------------- |
+| id         | int(10)     |                 | UNSIGNED | 否   | 无   |      | AUTO_INCREMENT |
+| appkey     | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
+| channel    | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
+| save_type  | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
+| chain_data | json        | utf8_general_ci |          | 是   | NULL |      |
 
 ## 接口定义
 
