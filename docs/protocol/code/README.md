@@ -11,110 +11,111 @@
 | 名字        | 类型         | 排序规则        | 属性     | 空  | 默认 | 注释 | 额外           |
 | ----------- | ------------ | --------------- | -------- | --- | ---- | ---- | -------------- |
 | id          | int(10)      |                 | UNSIGNED | 否  | 无   |      | AUTO_INCREMENT |
-| appkey      | varchar(50)  | utf8_general_ci |          | 是  | NULL |      |
-| channel     | varchar(50)  | utf8_general_ci |          | 是  | NULL |      |
-| role_type   | varchar(50)  | utf8_general_ci |          | 是  | NULL |      |
-| subject_id  | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| crypto_type | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| public_key  | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| private_key | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| created_at  | timestamp    |                 |          | 是  | NULL |      |
-| updated_at  | timestamp    |                 |          | 是  | NULL |      |
-| deleted_at  | timestamp    |                 |          | 是  | NULL |      |
+| appkey      | varchar(50)  | utf8_general_ci |          | 是  | NULL |      |                |
+| channel     | varchar(50)  | utf8_general_ci |          | 是  | NULL |      |                |
+| role_type   | varchar(50)  | utf8_general_ci |          | 是  | NULL |      |                |
+| subject_id  | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| crypto_type | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| public_key  | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| private_key | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| created_at  | timestamp    |                 |          | 是  | NULL |      |                |
+| updated_at  | timestamp    |                 |          | 是  | NULL |      |                |
+| deleted_at  | timestamp    |                 |          | 是  | NULL |      |                |
 
 ### did 数据表
 
 | 名字            | 类型         | 排序规则        | 属性     | 空  | 默认 | 注释 | 额外           |
 | --------------- | ------------ | --------------- | -------- | --- | ---- | ---- | -------------- |
 | id              | int(10)      |                 | UNSIGNED | 否  | 无   |      | AUTO_INCREMENT |
-| appkey          | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| channel         | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| subject_id      | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| id_string       | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| public_key_type | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| public_key      | varchar(255) | utf8_general_ci |          | 是  | NULL |      |
-| role_type       | bigint(20)   |                 |          | 是  | NULL |      |
-| key_type        | bigint(20)   |                 |          | 是  | NULL |      |
-| hash_type       | bigint(20)   |                 |          | 是  | NULL |      |
-| created_at      | timestamp    |                 |          | 是  | NULL |      |
-| updated_at      | timestamp    |                 |          | 是  | NULL |      |
-| deleted_at      | timestamp    |                 |          | 是  | NULL |      |
+| appkey          | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| channel         | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| subject_id      | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| id_string       | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| public_key_type | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| public_key      | varchar(255) | utf8_general_ci |          | 是  | NULL |      |                |
+| role_type       | bigint(20)   |                 |          | 是  | NULL |      |                |
+| key_type        | bigint(20)   |                 |          | 是  | NULL |      |                |
+| hash_type       | bigint(20)   |                 |          | 是  | NULL |      |                |
+| created_at      | timestamp    |                 |          | 是  | NULL |      |                |
+| updated_at      | timestamp    |                 |          | 是  | NULL |      |                |
+| deleted_at      | timestamp    |                 |          | 是  | NULL |      |                |
 
 ### 协议模板表
 
-| 名字                 | 类型         | 排序规则        | 属性 | 空  | 默认 | 注释 | 额外           |
-| -------------------- | ------------ | --------------- | ---- | --- | ---- | ---- | -------------- |
-| id                   | int(10)      |                 |      | 否  | 无   |      | AUTO_INCREMENT |
-| appkey               | varchar(50)  | utf8_general_ci |      | 是  | NULL |      |
-| channel              | varchar(50)  | utf8_general_ci |      | 是  | NULL |      |
-| account_id           | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| protocol_template_id | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| state                | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| name                 | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| protocol_type        | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| did_document         | text         | utf8_general_ci |      | 是  | NULL |      |
-| protocol_proof_type  | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| version              | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| created_at           | timestamp    |                 |      | 是  | NULL |      |
-| updated_at           | timestamp    |                 |      | 是  | NULL |      |
-| deleted_at           | timestamp    |                 |      | 是  | NULL |      |
+| 名字                 | 类型         | 排序规则        | 属性 | 空  | 默认 | 注释                                                                                  | 额外           |
+| -------------------- | ------------ | --------------- | ---- | --- | ---- | ------------------------------------------------------------------------------------- | -------------- |
+| id                   | int(10)      |                 |      | 否  | 无   |                                                                                       | AUTO_INCREMENT |
+| appkey               | varchar(50)  | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| channel              | varchar(50)  | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| account_id           | varchar(255) | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| protocol_template_id | varchar(255) | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| state                | varchar(255) | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| name                 | varchar(255) | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| protocol_type        | varchar(255) | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| did_document         | text         | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| protocol_proof_type  | varchar(255) | utf8_general_ci |      | 是  | NULL | proof:仅主体签，proofs:主体和 controller 签，proofchain：主体和 controller 有先后顺序 |                |
+| is_Open              | varchar(255) | utf8_general_ci |      | 是  | NULL |
+| version              | varchar(255) | utf8_general_ci |      | 是  | NULL |                                                                                       |                |
+| created_at           | timestamp    |                 |      | 是  | NULL |                                                                                       |                |
+| updated_at           | timestamp    |                 |      | 是  | NULL |                                                                                       |                |
+| deleted_at           | timestamp    |                 |      | 是  | NULL |                                                                                       |                |
 
 ### 协议 JSON 字段对应关系表
 
 | 名字                 | 类型         | 排序规则        | 属性 | 空  | 默认 | 注释 | 额外           |
 | -------------------- | ------------ | --------------- | ---- | --- | ---- | ---- | -------------- |
 | id                   | int(10)      |                 |      | 否  | 无   |      | AUTO_INCREMENT |
-| appkey               | varchar(50)  | utf8_general_ci |      | 是  | NULL |      |
-| channel              | varchar(50)  | utf8_general_ci |      | 是  | NULL |      |
-| account_id           | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| protocol_template_id | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| property             | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| property_type        | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| example              | varchar(255) | utf8_general_ci |      | 是  | NULL |      |
-| created_at           | timestamp    |                 |      | 是  | NULL |      |
-| updated_at           | timestamp    |                 |      | 是  | NULL |      |
-| deleted_at           | timestamp    |                 |      | 是  | NULL |      |
+| appkey               | varchar(50)  | utf8_general_ci |      | 是  | NULL |      |                |
+| channel              | varchar(50)  | utf8_general_ci |      | 是  | NULL |      |                |
+| account_id           | varchar(255) | utf8_general_ci |      | 是  | NULL |      |                |
+| protocol_template_id | varchar(255) | utf8_general_ci |      | 是  | NULL |      |                |
+| property             | varchar(255) | utf8_general_ci |      | 是  | NULL |      |                |
+| property_type        | varchar(255) | utf8_general_ci |      | 是  | NULL |      |                |
+| example              | varchar(255) | utf8_general_ci |      | 是  | NULL |      |                |
+| created_at           | timestamp    |                 |      | 是  | NULL |      |                |
+| updated_at           | timestamp    |                 |      | 是  | NULL |      |                |
+| deleted_at           | timestamp    |                 |      | 是  | NULL |      |                |
 
 ### 协议实例化数据表
 
 | 类型                 | 排序规则     | 属性            | 空       | 默认 | 注释 | 额外 | 操作           |
 | -------------------- | ------------ | --------------- | -------- | ---- | ---- | ---- | -------------- |
 | id                   | int(10)      |                 | UNSIGNED | 否   | 无   |      | AUTO_INCREMENT |
-| appkey               | varchar(50)  | utf8_general_ci |          | 是   | NULL |      |
-| channel              | varchar(50)  | utf8_general_ci |          | 是   | NULL |      |
-| account_id           | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| protocol_id          | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| protoco_templatel_id | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| subject              | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| controller           | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| subject_proof        | text         | utf8_general_ci |          | 是   | NULL |      |
-| controller_proof     | text         | utf8_general_ci |          | 是   | NULL |      |
-| did_document         | text         | utf8_general_ci |          | 是   | NULL |      |
-| is_signed            | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| is_publish           | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| version              | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| tx                   | varchar(255) | utf8_general_ci |          | 是   | NULL |      |
-| created_at           | timestamp    |                 |          | 是   | NULL |      |
-| updated_at           | timestamp    |                 |          | 是   | NULL |      |
-| deleted_at           | timestamp    |                 |          | 是   | NULL |      |
+| appkey               | varchar(50)  | utf8_general_ci |          | 是   | NULL |      |                |
+| channel              | varchar(50)  | utf8_general_ci |          | 是   | NULL |      |                |
+| account_id           | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| protocol_id          | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| protoco_templatel_id | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| subject              | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| controller           | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| subject_proof        | text         | utf8_general_ci |          | 是   | NULL |      |                |
+| controller_proof     | text         | utf8_general_ci |          | 是   | NULL |      |                |
+| did_document         | text         | utf8_general_ci |          | 是   | NULL |      |                |
+| is_signed            | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| is_publish           | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| version              | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| tx                   | varchar(255) | utf8_general_ci |          | 是   | NULL |      |                |
+| created_at           | timestamp    |                 |          | 是   | NULL |      |                |
+| updated_at           | timestamp    |                 |          | 是   | NULL |      |                |
+| deleted_at           | timestamp    |                 |          | 是   | NULL |      |                |
 
 ### 协议实例化数据存储表
 
-| 类型       | 排序规则    | 属性            | 空       | 默认 | 注释 | 额外 | 操作           |
-| ---------- | ----------- | --------------- | -------- | ---- | ---- | ---- | -------------- |
-| id         | int(10)     |                 | UNSIGNED | 否   | 无   |      | AUTO_INCREMENT |
-| appkey     | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
-| channel    | varchar(50) | utf8_general_ci |          | 是   | NULL |      |
-| save_type  | varchar(50) | utf8_general_ci |          | 是   | NULL |  0/1/2/3    |
-| chain_data | json        | utf8_general_ci |          | 是   | NULL |      |
+| 类型       | 排序规则    | 属性            | 空       | 默认 | 注释 | 额外    | 操作           |
+| ---------- | ----------- | --------------- | -------- | ---- | ---- | ------- | -------------- |
+| id         | int(10)     |                 | UNSIGNED | 否   | 无   |         | AUTO_INCREMENT |
+| appkey     | varchar(50) | utf8_general_ci |          | 是   | NULL |         |                |
+| channel    | varchar(50) | utf8_general_ci |          | 是   | NULL |         |                |
+| save_type  | varchar(50) | utf8_general_ci |          | 是   | NULL | 0/1/2/3 |                |
+| chain_data | json        | utf8_general_ci |          | 是   | NULL |         |                |
 
 ::: tip
 save_type 存储级别：
 0：mysql
-1：mysql+hyperledger公证机构链
-2：mysql+ 加盟hyperledger公证链（成员）
-3：mysql+ 加盟hyperledger公证链（节点）
-4：mysql+ 私有hyperledger公证链（网络）
+1：mysql+hyperledger 公证机构链
+2：mysql+ 加盟 hyperledger 公证链（成员）
+3：mysql+ 加盟 hyperledger 公证链（节点）
+4：mysql+ 私有 hyperledger 公证链（网络）
 :::
 
 ## 接口定义
@@ -129,13 +130,13 @@ save_type 存储级别：
 
 #### 输入
 
-| 字段名称   | 描述                                                                   |
-| ---------- | ---------------------------------------------------------------------- |
-| appkey     | 中台 Appkey                                                            |
-| channel    | 中台 channel                                                           |
-| roleType   | 主体类型：1：accountId ，2：suborgkey，3：appid，4：appkey             |
-| subjectId  | 主体类型 id：可以使中台账号服务的 accountid，机构 id，appid，appkey 等 |
-| cryptoType | 加密类型：0：ED25519，1EcdsaP256， 2：SECP256K1                        |
+| 字段名称   | 描述                                                                   | 默认值            |
+| ---------- | ---------------------------------------------------------------------- | ----------------- |
+| appkey     | 中台 Appkey                                                            |                   |
+| channel    | 中台 channel                                                           |                   |
+| roleType   | 主体类型：1：accountId ，2：suborgkey，3：appid，4：appkey             |                   |
+| subjectId  | 主体类型 id：可以使中台账号服务的 accountid，机构 id，appid，appkey 等 |                   |
+| cryptoType | 加密类型：0：ED25519，1EcdsaP256， 2：SECP256K1，                      | 默认值：SECP256K1 |
 
 #### 输出
 
@@ -170,15 +171,15 @@ did/create
 
 #### 输入
 
-| 字段名称  | 描述                                                                                       |
-| --------- | ------------------------------------------------------------------------------------------ |
-| appkey    | 中台 Appkey                                                                                |
-| channel   | 中台 channel                                                                               |
-| roleType  | 主体类型：1：accountId ，2：suborgkey，3：appid，4：appkey                                 |
-| subjectId | 主体类型 id：可以使中台账号服务的 accountid，机构 id，appid，appkey 等                     |
-| publicKey | 主体用于创建身份的 accountid                                                               |
-| keyType   | 加密类型：0：ED25519，1EcdsaP256， 2：SECP256K1                                            |
-| hashType  | 哈希类型：keccak = 0，sha3 = 1，keccak_384 = 2，sha3_384 = 3，keccak_512 = 4，sha3_512 = 5 |
+| 字段名称  | 描述                                                                                       | 默认值            |
+| --------- | ------------------------------------------------------------------------------------------ | ----------------- |
+| appkey    | 中台 Appkey                                                                                |                   |
+| channel   | 中台 channel                                                                               |                   |
+| roleType  | 主体类型：1：accountId ，2：suborgkey，3：appid，4：appkey                                 |                   |
+| subjectId | 主体类型 id：可以使中台账号服务的 accountid，机构 id，appid，appkey 等                     |                   |
+| publicKey | 主体用于创建身份的 accountid                                                               |                   |
+| keyType   | 加密类型：0：ED25519，1EcdsaP256， 2：SECP256K1                                            | 默认值：SECP256K1 |
+| hashType  | 哈希类型：keccak = 0，sha3 = 1，keccak_384 = 2，sha3_384 = 3，keccak_512 = 4，sha3_512 = 5 | 默认值：sha3      |
 
 #### 输出
 
@@ -201,11 +202,11 @@ protocol/protocolTemplate/getInfo
 
 #### 输入
 
-| 字段名称           | 描述         |
-| ------------------ | ------------ |
-| appkey             | 中台 Appkey  |
-| channel            | 中台 channel |
-| protocolTemplateId | 协议模板 id  |
+| 字段名称           | 描述         | 默认值 |
+| ------------------ | ------------ | ------ |
+| appkey             | 中台 Appkey  |        |
+| channel            | 中台 channel |        |
+| protocolTemplateId | 协议模板 id  |        |
 
 #### 输出
 
@@ -243,11 +244,11 @@ protocol/protocolTemplate/getList
 
 #### 输入
 
-| 字段名称 | 描述                     |
-| -------- | ------------------------ |
-| appkey   | 中台 Appkey              |
-| channel  | 中台 channel             |
-| type     | 协议类型：默认空取所有的 |
+| 字段名称 | 描述                     | 默认值 |
+| -------- | ------------------------ | ------ |
+| appkey   | 中台 Appkey              |        |
+| channel  | 中台 channel             |        |
+| type     | 协议类型：默认空取所有的 | 默认空 |
 
 #### 输出
 
@@ -302,11 +303,11 @@ protocol/protocolTemplateAnalysis/getInfo
 
 #### 输入
 
-| 字段名称           | 描述         |
-| ------------------ | ------------ |
-| appkey             | 中台 Appkey  |
-| channel            | 中台 channel |
-| protocolTemplateId | 协议模板 id  |
+| 字段名称           | 描述         | 默认值 |
+| ------------------ | ------------ | ------ |
+| appkey             | 中台 Appkey  |        |
+| channel            | 中台 channel |        |
+| protocolTemplateId | 协议模板 id  |        |
 
 #### 输出
 
@@ -360,14 +361,14 @@ protocol/instance/instantiate
 
 #### 输入
 
-| 字段名称            | 描述                  |
-| ------------------- | --------------------- |
-| appkey              | 中台 Appkey           |
-| channel             | 中台 channel          |
-| protocolTemplateId  | ProtocolTemplate_13   |
-| subjectId           | 协议签署方            |
-| controllerId        | 协议签署方 ，允许为空 |
-| protocolContentData | 协议内容              |
+| 字段名称            | 描述                  | 默认值 |
+| ------------------- | --------------------- | ------ |
+| appkey              | 中台 Appkey           |        |
+| channel             | 中台 channel          |        |
+| protocolTemplateId  | ProtocolTemplate_13   |        |
+| subjectId           | 协议签署方            |        |
+| controllerId        | 协议签署方 ，允许为空 |        |
+| protocolContentData | 协议内容              |        |
 
 #### 输出
 
@@ -409,16 +410,16 @@ protocol/instance/signeture
 
 #### 输入
 
-| 字段名称        | 描述                                 |
-| --------------- | ------------------------------------ |
-| appkey          | 中台 Appkey                          |
-| channel         | 中台 channel                         |
-| protocolId      | 协议 ID                              |
-| protocolType    | 签署类型：1 正式协议，2 公开邀约     |
-| subjectId       | 协议签署方                           |
-| controllerId    | 协议签署方                           |
-| subjectProof    | 协议 subject 签名 proof              |
-| controllerProof | 协议 controller 签名 proff，允许为空 |
+| 字段名称        | 描述                                 | 默认值 |
+| --------------- | ------------------------------------ | ------ |
+| appkey          | 中台 Appkey                          |        |
+| channel         | 中台 channel                         |        |
+| protocolId      | 协议 ID                              |        |
+| protocolType    | 签署类型：1 正式协议，2 公开邀约     |        |
+| subjectId       | 协议签署方                           |        |
+| controllerId    | 协议签署方                           |        |
+| subjectProof    | 协议 subject 签名 proof              |        |
+| controllerProof | 协议 controller 签名 proff，允许为空 |        |
 
 ::: tip
 当时公开邀约是 subjectId 和 controllerProof 可以为空
@@ -464,11 +465,11 @@ protocol/instance/getSignetureData
 
 #### 输入
 
-| 字段名称 | 描述         |
-| -------- | ------------ |
-| appkey   | 中台 Appkey  |
-| channel  | 中台 channel |
-| didUrl   | did url      |
+| 字段名称 | 描述         | 默认值 |
+| -------- | ------------ | ------ |
+| appkey   | 中台 Appkey  |        |
+| channel  | 中台 channel |        |
+| didUrl   | did url      |        |
 
 ::: tip
 didur 支持多种参数：
@@ -675,16 +676,16 @@ crypto/jws/sign
 
 #### 输入
 
-| 字段名称   | 描述                       |
-| ---------- | -------------------------- |
-| appkey     | 中台 Appkey                |
-| channel    | 中台 channel               |
-| signType   | 0：在线，1 离线            |
-| publicKey  | signType = 1 填入 公钥     |
-| roleType   | signType = 0 填入 主体类型 |
-| subjectId  | signType = 0 填入 主体 id  |
-| cryptoType | 加密类型                   |
-| payLoad    | jws payLoad 内容           |
+| 字段名称   | 描述                       | 默认值 |
+| ---------- | -------------------------- | ------ |
+| appkey     | 中台 Appkey                |        |
+| channel    | 中台 channel               |        |
+| signType   | 0：在线，1 离线            |        |
+| publicKey  | signType = 1 填入 公钥     |        |
+| roleType   | signType = 0 填入 主体类型 |        |
+| subjectId  | signType = 0 填入 主体 id  |        |
+| cryptoType | 加密类型                   |        |
+| payLoad    | jws payLoad 内容           |        |
 
 #### 输出
 
@@ -707,15 +708,15 @@ protocol/protocolTemplate/add
 
 #### 输入
 
-| 字段名称         | 描述                  |
-| ---------------- | --------------------- |
-| appkey           | 中台 Appkey           |
-| channel          | 中台 channel          |
-| accountId        | 添加协议模板的账号 id |
-| name             | 协议模板名称          |
-| protocolType     | 协议模板乐西          |
-| protocolTemplate | 协议模板内容          |
-| isOpen           | 是否是公开要约的协议  |
+| 字段名称         | 描述                  | 默认值 |
+| ---------------- | --------------------- | ------ |
+| appkey           | 中台 Appkey           |        |
+| channel          | 中台 channel          |        |
+| accountId        | 添加协议模板的账号 id |        |
+| name             | 协议模板名称          |        |
+| protocolType     | 协议模板乐西          |        |
+| protocolTemplate | 协议模板内容          |        |
+| isOpen           | 是否是公开要约的协议  |        |
 
 #### 输出
 
@@ -753,15 +754,15 @@ protocol/protocolTemplateAnalysis/add
 
 #### 输入
 
-| 字段名称           | 描述                    |
-| ------------------ | ----------------------- |
-| appkey             | 中台 Appkey             |
-| channel            | 中台 channel            |
-| accountId          | 添加协议模板的账号 id   |
-| protocolTemplateId | 协议模板 id             |
-| property           | 属性名称                |
-| propertyType       | 属性类型，string，array |
-| propertyExample    | 属性示例                |
+| 字段名称           | 描述                    | 默认值 |
+| ------------------ | ----------------------- | ------ |
+| appkey             | 中台 Appkey             |        |
+| channel            | 中台 channel            |        |
+| accountId          | 添加协议模板的账号 id   |        |
+| protocolTemplateId | 协议模板 id             |        |
+| property           | 属性名称                |        |
+| propertyType       | 属性类型，string，array |        |
+| propertyExample    | 属性示例                |        |
 
 #### 输出
 
@@ -796,12 +797,12 @@ protocol/protocolTemplate/verify
 
 #### 输入
 
-| 字段名称           | 描述                       |
-| ------------------ | -------------------------- |
-| appkey             | 中台 Appkey                |
-| channel            | 中台 channel               |
-| protocolTemplateId | 添加协议模板的 id          |
-| state              | 是否通过：0 不通过，1 通过 |
+| 字段名称           | 描述                       | 默认值 |
+| ------------------ | -------------------------- | ------ |
+| appkey             | 中台 Appkey                |        |
+| channel            | 中台 channel               |        |
+| protocolTemplateId | 添加协议模板的 id          |        |
+| state              | 是否通过：0 不通过，1 通过 |        |
 
 #### 输出
 
@@ -833,13 +834,13 @@ protocol/protocolTemplate/publish
 
 #### 输入
 
-| 字段名称           | 描述                 |
-| ------------------ | -------------------- |
-| appkey             | 中台 Appkey          |
-| channel            | 中台 channel         |
-| protocolTemplateId | 添加协议模板的 id    |
-| appsstoreId        | 应用市场 id          |
-| appsstoreAssetType | 应用市场那个资源分类 |
+| 字段名称           | 描述                 | 默认值 |
+| ------------------ | -------------------- | ------ |
+| appkey             | 中台 Appkey          |        |
+| channel            | 中台 channel         |        |
+| protocolTemplateId | 添加协议模板的 id    |        |
+| appsstoreId        | 应用市场 id          |        |
+| appsstoreAssetType | 应用市场那个资源分类 |        |
 
 #### 输出
 
