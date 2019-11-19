@@ -3,7 +3,7 @@ const chalk = require("chalk");
 const path = require("./lib/path");
 const file = require("./lib/file");
 
-const sshAddress = "5dce";
+const sshAddress = "5dd3";
 
 require("shelljs/global");
 
