@@ -48,10 +48,6 @@ module.exports = [
         text: '技术定义',
         link: '/protocol/code/'
       },
-      {
-        text:'notarization',
-        link: '/notarization/'
-      },
     ]
   },
 ]
